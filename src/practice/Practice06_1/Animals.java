@@ -27,13 +27,6 @@ public class Animals {
         this.raceDistance = raceDistance;
     }
 
-//    @Override
-//    public String toString() {
-//        return '{' + race +
-//                " Total Distance = " + raceDistance +
-//                '}';
-//    }
-
     @Override
     public String toString() {
         return "Animals{" +

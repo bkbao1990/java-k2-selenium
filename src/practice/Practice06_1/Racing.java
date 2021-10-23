@@ -24,7 +24,7 @@ public class Racing {
 
 
         do {
-            for (Animals ignored : animals) {
+            for (Animals animal : animals) {
                 dog.setRaceDistance(dogCurrentDistance += dog.getSpeed());
                 horse.setRaceDistance(horseCurrentDistance += horse.getSpeed());
                 tiger.setRaceDistance(tigerCurrentDistance += tiger.getSpeed());
@@ -39,10 +39,10 @@ public class Racing {
 
         System.out.println(animals);
         if ((tigerCurrentDistance > dogCurrentDistance) && (tigerCurrentDistance > horseCurrentDistance))
-            System.out.printf("Winner is %s, with total run distance is: %d and average speed: %d.", tiger.getRace(), tigerCurrentDistance, tigerSpeed);
+            System.out.printf("Winner is %s, with total run distance is: %d and average speed: %d.", tiger.getRace(), tigerCurrentDistance,tigerSpeed);
         else if ((horseCurrentDistance > tigerCurrentDistance) && (horseCurrentDistance > dogCurrentDistance))
-            System.out.printf("Winner is %s, with total run distance is: %d and average speed: %d.", horse.getRace(), horseCurrentDistance, horseSpeed);
+            System.out.printf("Winner is %s, with total run distance is: %d and average speed: %d.", horse.getRace(),horseCurrentDistance, horseSpeed);
         else
-            System.out.printf("Winner is %s, with total run distance is: %d and average speed: %d.", dog.getRace(), horseCurrentDistance, dogSpeed);
+            System.out.printf("Winner is %s, with total run distance is: %d and average speed: %d.", dog.getRace(), dogCurrentDistance, dogSpeed);
     }
 }

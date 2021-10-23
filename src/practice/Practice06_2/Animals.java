@@ -1,12 +1,17 @@
 package practice.Practice06_2;
 
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Animals {
     private final String race;
     private final int maxSpeed;
     private final int racingDistance;
     private final boolean flyable;
 
-    private Animals(Builder builder){
+
+    private Animals(Builder builder) {
         race = builder.race;
         maxSpeed = builder.maxSpeed;
         racingDistance = builder.racingDistance;
@@ -19,22 +24,22 @@ public class Animals {
         private int racingDistance;
         private boolean flyable;
 
-        public Builder whatTypeOfAnimal (String race){
+        public Builder whatTypeOfAnimal(String race) {
             this.race = race;
             return this;
         }
 
-        public Builder whatIsTheMaximumSpeed (int maxSpeed){
+        public Builder whatIsTheMaximumSpeed(int maxSpeed) {
             this.maxSpeed = maxSpeed;
             return this;
         }
 
-        public Builder whatIsTheFinalRacingDistance (int racingDistance) {
+        public Builder whatIsTheFinalRacingDistance(int racingDistance) {
             this.racingDistance = racingDistance;
             return this;
         }
 
-        public Builder canItFly (boolean flyable){
+        public Builder canItFly(boolean flyable) {
             this.flyable = flyable;
             return this;
         }
@@ -43,5 +48,18 @@ public class Animals {
         public Animals build() {
             return new Animals(this);
         }
+
+    }
+
+    @Override
+    public String toString() {
+        return race + "{" +
+                "race='" + race + '\'' +
+                ", maxSpeed=" + maxSpeed +
+                ", racingDistance=" + racingDistance +
+                ", flyable=" + flyable +
+                '}';
     }
 }
+
+
