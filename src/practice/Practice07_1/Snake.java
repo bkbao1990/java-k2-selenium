@@ -5,22 +5,17 @@ import java.security.SecureRandom;
 public class Snake extends Animals{
     private int SNAKE_MAX_SPEED = 120;
     @Override
-    protected int getSpeed() {
+    protected int speed() {
         return new SecureRandom().nextInt(SNAKE_MAX_SPEED);
     }
 
     @Override
-    protected boolean getFlyable() {
+    protected boolean flyable() {
         return false;
     }
 
     @Override
-    protected String getRace() {
+    protected String raceName() {
         return "Snake";
-    }
-
-    @Override
-    protected int raceDistance(int raceDistance) {
-        return raceDistance;
     }
 }

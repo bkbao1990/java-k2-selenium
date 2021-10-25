@@ -18,41 +18,33 @@ public class Racing {
         animals.add(falcon);
         animals.add(sparrow);
 
-    }
+        List<Animals> applicableAnimals = new ArrayList<>();
 
-    public void racingResult(List<Animals> animals) {
-        int totalRacingDistance = 1000;
-        int currentDistance = 0;
-        int counter = 0;
-        List<Animals> allowToRace = new ArrayList<>();
         for (Animals animal : animals) {
-            if (!animal.getFlyable()) {
-                allowToRace.add(animal);
+            if (!animal.flyable())
+                applicableAnimals.add(animal);
+        }
+        for (Animals applicableAnimal : applicableAnimals) {
+            System.out.println(applicableAnimal.raceName());
+        }
+
+        for (int index = 0; index < animals.size(); index++) {
+            Animals animal = animals.get(index);
+            System.out.println("animal: " + animal.raceName() + " speed " + animal.speed());
+        }
+
+        Animals winner = null;
+        if (animals.isEmpty())
+            System.out.println("there is no animals");
+
+        for (Animals animal : applicableAnimals) {
+            if (winner == null) {
+                winner = animal;
+            } else {
+                if (animal.speed() > winner.speed())
+                    winner = animal;
             }
         }
-       // do {
-            for (Animals index : allowToRace) {
-                index.raceDistance(currentDistance+= index.getSpeed());
-                counter++;
-            }
-       // }
-      //  while ((List<Animals> allowToRace.stream(tiger) <= totalRaceLength) && (horseCurrentDistance <= totalRaceLength) && (tigerCurrentDistance <= totalRaceLength));
-//
-//    int dogSpeed = dogCurrentDistance / counter;
-//    int tigerSpeed = tigerCurrentDistance / counter;
-//    int horseSpeed = horseCurrentDistance / counter;
-//
-//        System.out.println(animals);
-//        if((tigerCurrentDistance >dogCurrentDistance)&&(tigerCurrentDistance >horseCurrentDistance))
-//            System.out.printf("Winner is %s, with total run distance is: %d and average speed: %d.",tiger.getRace(),tigerCurrentDistance,tigerSpeed);
-//        else if((horseCurrentDistance >tigerCurrentDistance)&&(horseCurrentDistance >dogCurrentDistance))
-//            System.out.printf("Winner is %s, with total run distance is: %d and average speed: %d.",horse.getRace(),horseCurrentDistance,horseSpeed);
-//        else
-//                System.out.printf("Winner is %s, with total run distance is: %d and average speed: %d.",dog.getRace(),horseCurrentDistance,dogSpeed);
-//    }
-//
-//
-//        }
-
+        System.out.println("winner " + winner.raceName() + " speed " + winner.speed());
     }
 }

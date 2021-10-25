@@ -19,49 +19,51 @@ public class Racing {
         Animals tiger = new Animals.Builder().
                 flyable(false).
                 speed(new SecureRandom().nextInt(TIGER_MAX_SPEED)).
+                raceName("Tiger").
                 build();
         Animals horse = new Animals.Builder().
                 flyable(false).
                 speed(new SecureRandom().nextInt(HORSE_MAX_SPEED)).
+                raceName("Horse").
                 build();
         Animals dog = new Animals.Builder().
                 flyable(false).
                 speed(new SecureRandom().nextInt(DOG_MAX_SPEED)).
+                raceName("Dog").
                 build();
         Animals falcon = new Animals.Builder().
                 flyable(true).
                 speed(new SecureRandom().nextInt(FALCON_MAX_SPEED)).
+                raceName("Falcon").
                 build();
 
-        List<Animals> animals = Arrays.asList(tiger,horse,dog,falcon);
+        List<Animals> animals = Arrays.asList(tiger, horse, dog, falcon);
 
         List<Animals> applicableAnimals = new ArrayList<>();
 
         for (Animals animal : animals) {
-            if(!animal.isFlyable())
+            if (!animal.isFlyable())
                 applicableAnimals.add(animal);
         }
 
-        for (int index = 0; index<animals.size(); index++) {
+        for (int index = 0; index < animals.size(); index++) {
             Animals animal = animals.get(index);
-            System.out.println("animal: " + animal.getClass().getSimpleName() + " speed " + animal.getSpeed());
+            System.out.println("animal: " + animal.getRaceName() + " speed " + animal.getSpeed());
         }
 
         Animals winner = null;
-        if(animals.isEmpty())
+        if (animals.isEmpty())
             System.out.println("there is no animals");
 
         for (Animals animal : applicableAnimals) {
-            if (winner == null){
+            if (winner == null) {
                 winner = animal;
             } else {
                 if (animal.getSpeed() > winner.getSpeed())
                     winner = animal;
             }
         }
-        System.out.println("winner " + winner.getClass().getSimpleName() + " speed " + winner.getSpeed());
-
-        // boolean isFlyable = animals[tiger[1]];
+        System.out.println("winner " + winner.getRaceName() + " speed " + winner.getSpeed());
     }
 }
 

@@ -2,25 +2,21 @@ package practice.Practice07_1;
 
 import java.security.SecureRandom;
 
-public class Falcon extends Animals{
-    private int FALCON_MAX_SPEED = 150;
+public class Falcon extends Animals {
+    private final int FALCON_MAX_SPEED = 150;
+
     @Override
-    protected int getSpeed() {
+    protected int speed() {
         return new SecureRandom().nextInt(FALCON_MAX_SPEED);
     }
 
     @Override
-    protected boolean getFlyable() {
+    protected boolean flyable() {
         return true;
     }
 
     @Override
-    protected String getRace() {
+    protected String raceName() {
         return "Falcon";
-    }
-
-    @Override
-    protected int raceDistance(int raceDistance) {
-        return raceDistance;
     }
 }

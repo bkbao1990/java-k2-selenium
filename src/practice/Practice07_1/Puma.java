@@ -3,24 +3,19 @@ package practice.Practice07_1;
 import java.security.SecureRandom;
 
 public class Puma extends Animals{
-    private int PUMA_MAX_SPEED = 180;
+    private final int PUMA_MAX_SPEED = 180;
     @Override
-    protected int getSpeed() {
+    protected int speed() {
         return new SecureRandom().nextInt(PUMA_MAX_SPEED);
     }
 
     @Override
-    protected boolean getFlyable() {
+    protected boolean flyable() {
         return false;
     }
 
     @Override
-    protected String getRace() {
+    protected String raceName() {
         return "Puma";
-    }
-
-    @Override
-    protected int raceDistance(int raceDistance) {
-        return raceDistance;
     }
 }
