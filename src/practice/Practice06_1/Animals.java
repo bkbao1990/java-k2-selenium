@@ -3,35 +3,45 @@ package practice.Practice06_1;
 import java.security.SecureRandom;
 
 public class Animals {
-    private int speed;
-    private int raceDistance;
-    private String race;
+//    private int raceDistance;
+//    private String race;
 
-    public Animals(String race) {
-        this.race = race;
+    private int speed;
+
+    public Animals() {
     }
 
-    public String getRace() {
-        return race;
+    public Animals (int speed){
+        this.speed = speed;
     }
 
     public int getSpeed() {
-        return speed;
+        return this.speed;
     }
 
-    public int getRaceDistance() {
-        return raceDistance;
+
+//    public Animals(String race) {
+//        this.race = race;
+//    }
+//
+//    public String getRace() {
+//        return race;
+
+//    }
+
+//    public int getRaceDistance() {
+//        return raceDistance;
+//    }
+//
+//    public void setRaceDistance(int raceDistance) {
+//        this.raceDistance = raceDistance;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Animals{" +
+//                "Total Run Distance=" + raceDistance +
+//                ", race='" + race + '\'' +
+//                '}';
     }
 
-    public void setRaceDistance(int raceDistance) {
-        this.raceDistance = raceDistance;
-    }
-
-    @Override
-    public String toString() {
-        return "Animals{" +
-                "Total Run Distance=" + raceDistance +
-                ", race='" + race + '\'' +
-                '}';
-    }
-}
