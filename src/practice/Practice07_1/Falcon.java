@@ -3,11 +3,10 @@ package practice.Practice07_1;
 import java.security.SecureRandom;
 
 public class Falcon extends Animals {
-    private final int FALCON_MAX_SPEED = 150;
+    private static final int FALCON_MAX_SPEED = 150;
 
-    @Override
-    protected int speed() {
-        return new SecureRandom().nextInt(FALCON_MAX_SPEED);
+    public Falcon() {
+        super(new SecureRandom().nextInt(FALCON_MAX_SPEED));
     }
 
     @Override

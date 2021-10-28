@@ -28,9 +28,8 @@ public class Racing {
             System.out.println(applicableAnimal.raceName());
         }
 
-        for (int index = 0; index < animals.size(); index++) {
-            Animals animal = animals.get(index);
-            System.out.println("animal: " + animal.raceName() + " speed " + animal.speed());
+        for (Animals animal : animals) {
+            System.out.println("animal: " + animal.raceName() + " speed " + animal.getSpeed());
         }
 
         Animals winner = null;
@@ -41,10 +40,10 @@ public class Racing {
             if (winner == null) {
                 winner = animal;
             } else {
-                if (animal.speed() > winner.speed())
+                if (animal.getSpeed() > winner.getSpeed())
                     winner = animal;
             }
         }
-        System.out.println("winner " + winner.raceName() + " speed " + winner.speed());
+        System.out.println("winner " + winner.raceName() + " speed " + winner.getSpeed());
     }
 }
